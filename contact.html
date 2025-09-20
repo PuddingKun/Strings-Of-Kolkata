@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Strings of Kolkata</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Nunito&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: #fff;
+      color: #222;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: #ffffff;
+      z-index: 999;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .nav-container {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5em;
+      color: white;
+    }
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5em;
+      color: white;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      position: relative;
+    }
+    .nav-links li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -4px;
+      background-color: white;
+      transition: width 0.3s ease;
+    }
+    .nav-links li a:hover::after {
+      width: 100%;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      .nav-links {
+        flex-direction: column;
+        background: rgba(0,0,0,0.8);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        display: none;
+        padding: 10px 20px;
+      }
+      .nav-links.active { display: flex; }
+    }
+
+    /* Contact Section */
+    .contact-container {
+      max-width: 800px;
+      margin: 120px auto 50px;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    .contact-container h2 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    button {
+      display: block;
+      margin: 1rem auto 0;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 8px;
+      background: #000;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover { background: #444; }
+
+    /* Emergency box */
+    .emergency {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-left: 4px solid crimson;
+      border-radius: 8px;
+    }
+    .emergency h3 {
+      margin-bottom: 0.5rem;
+      color: crimson;
+    }
+
+    footer {
+      background: #111;
+      color: #eee;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">Strings of Kolkata</div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links">
+        <li><a href="index.htm">Home</a></li>
+        <li><a href="rep.htm">Repertoire</a></li>
+        <li><a href="per.htm">Performances</a></li>
+        <li><a href="contact.htm">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" name="name" id="name" required />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" name="phone" id="phone" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email (optional)</label>
+        <input type="email" name="email" id="email" />
+      </div>
+      <div class="form-group">
+        <label for="message">Your Message *</label>
+        <textarea name="message" id="message" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="emergency">
+      <h3>Emergency Contact</h3>
+      <p><strong>Phone 1:</strong> 727863613</p>
+      <p><strong>Phone 2:</strong> 7003701935</p>
+      <p><strong>Email:</strong> wait4mymusic@gmail.com</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Strings of Kolkata | Designed by Shreedeep Patra</p>
+  </footer>
+
+<script>
+  function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('active');
+  }
+  let prevScroll = window.scrollY;
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > prevScroll && currentScroll > 80) {
+      navbar.style.top = '-80px';
+    } else {
+      navbar.style.top = '0';
+    }
+    prevScroll = currentScroll;
+  });
+</script>
+</body>
+</html>
