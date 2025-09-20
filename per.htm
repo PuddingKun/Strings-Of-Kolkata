@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Performances | Strings of Kolkata</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Nunito&display=swap" rel="stylesheet" />
+  <style>/* Body and main content styles */
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: #fff;
+      color: #222;
+      scroll-behavior: smooth;
+      padding: 100px 20px 60px; /* leave space for fixed navbar and footer */
+      max-width: 1200px;
+      margin: auto;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+    .performance-item {
+      cursor: pointer;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .performance-item:hover {
+      transform: scale(1.05);
+    }
+    .performance-item img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .performance-title {
+      font-weight: 600;
+      font-size: 1.1em;
+      color: #444;
+      user-select: none;
+    }
+    /* Back to home link */
+    .back-home {
+      display: block;
+      text-align: center;
+      margin: 40px 0 30px;
+      font-weight: 500;
+      font-size: 1.1em;
+      color: #333;
+      text-decoration: none; /* no underline */
+      cursor: pointer;
+    }
+    .back-home:hover {
+      text-decoration: underline;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px 10px;
+      background: #f4f4f4;
+      font-size: 0.9em;
+      color: #000000;
+      margin-top: 40px;
+      border-top: 1px solid #ddd;
+    }
+
+    /* Responsive grid */
+    @media (max-width: 900px) {
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto; /* centers the nav content */
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5em;
+      color: white;
+    }
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5em;
+      color: white;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      position: relative;
+    }
+    .nav-links li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -4px;
+      background-color: white;
+      transition: width 0.3s ease;
+    }
+    .nav-links li a:hover::after {
+      width: 100%;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        flex-direction: column;
+        background: rgba(0,0,0,0.8);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        display: none;
+        padding: 10px 20px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+    }
+    
+</style>
+</head>
+<body>
+        <nav class="navbar">
+                <div class="nav-container">
+                  <div class="nav-logo">Strings of Kolkata</div>
+                  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+                  <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Repertoire</a></li>
+                    <li><a href="#">Performances</a></li>
+                    <li><a href="#">Contact</a></li>
+                  </ul>
+                </div>
+              </nav>
+
+
+  <h1>Performances</h1>
+
+  <div class="grid-container">
+    <a href="per.htm" class="performance-item" aria-label="Quartet - Taj pool side">
+      <img src="images/CVR.jpg" alt="Quartet - Taj pool side" />
+      <div class="performance-title">Quartet - Taj Bengal</div>
+    </a>
+    <a href="per.htm" class="performance-item" aria-label="Performance 2">
+      <img src="images/hyt.jpg" alt="Performance 2" />
+      <div class="performance-title">Quartet - Hyatt Regency</div>
+    </a>
+    <a href="per.htm" class="performance-item" aria-label="Performance 3">
+      <img src="images/lc.jpg" alt="Performance 3" />
+      <div class="performance-title">La Cucina (Trio)</div>
+    </a>
+    <a href="per.htm" class="performance-item" aria-label="Performance 4">
+      <img src="images/flm.jpg" alt="Performance 4" />
+      <div class="performance-title">Strings of Kolkata - Orchestra</div>
+    </a>
+    <a href="per.htm" class="performance-item" aria-label="Performance 5">
+      <img src="images/iccr.jpg" alt="Performance 5" />
+      <div class="performance-title">ICCR </div>
+    </a>
+    <a href="per.htm" class="performance-item" aria-label="Performance 6">
+      <img src="images/thyt.jpg" alt="Performance 6" />
+      <div class="performance-title">Hyatt Regency</div>
+    </a>
+    <a href="per.htm" class="performance-item" aria-label="Performance 7">
+      <img src="images/sc.jpg" alt="Performance 7" />
+      <div class="performance-title">Royal Bengal</div>
+    </a>
+    <a href="per.htm" class="performance-item" aria-label="Performance 8">
+      <img src="images/tb.jpg" alt="Performance 8" />
+      <div class="performance-title">Taj - Candle Light Duo</div>
+    </a>
+      <a href="per.htm" class="performance-item" aria-label="Performance 9">
+      <img src="images/cb.jpg" alt="Performance 9" />
+      <div class="performance-title">Dairy Milk - Advertisement</div>
+    </a>
+  </div>
+
+  <a href="index.htm" class="back-home">← Back to Home</a>
+
+  <footer>
+    <p>&copy; 2025 Strings of Kolkata | Designed by Shreedeep Patra</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>

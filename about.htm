@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Strings of Kolkata</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Nunito&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+  padding-top: 80px;
+  font-family: 'Nunito', sans-serif;
+  background-color: #fff;
+  color: #222;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8em;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #111;
+  position: relative;
+}
+
+h1::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #000000, #333333);
+  border-radius: 4px;
+}
+
+
+    h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8em;
+  margin: 50px 0 20px;
+  color: #222;
+  position: relative;
+  text-align: left;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #000000, #333333);
+  border-radius: 3px;
+}
+
+
+    p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+    .artists {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+  width: 100%;
+}
+    .artist {
+      text-align: center;
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+    .artist:hover {
+      transform: translateY(-5px);
+    }
+    .artist img {
+  display: block;
+  margin: 0 auto 15px auto;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+    .artist h3 {
+  font-family: 'Playfair Display', serif;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+    .back-link {
+      text-align: center;
+      margin-top: 50px;
+    }
+    a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+      .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: #ffffff;
+      z-index: 999;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .nav-container {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5em;
+      color: white;
+    }
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5em;
+      color: white;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      position: relative;
+    }
+    .nav-links li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -4px;
+      background-color: white;
+      transition: width 0.3s ease;
+    }
+    .nav-links li a:hover::after {
+      width: 100%;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        flex-direction: column;
+        background: rgba(0,0,0,0.8);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        display: none;
+        padding: 10px 20px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+    }
+    .main-content {
+  max-width: 100%;
+  width: 100%;
+  margin: auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">Strings of Kolkata</div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links">
+        <li><a href="index.htm">Home</a></li>
+        <li><a href="rep.htm">Repertoire</a></li>
+        <li><a href="per.htm">Performances</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="main-content">
+  <h1>About Strings of Kolkata</h1>
+
+  <p><strong>Strings of Kolkata</strong> is a Western classical music band dedicated to bringing the elegance and depth of string music to audiences in Kolkata and beyond. Founded by a group of passionate musicians, the ensemble is known for its musical storytelling, technical finesse, and emotionally resonant performances.</p>
+
+  <p>We perform a diverse repertoire that spans the Baroque, Classical, and Romantic eras, and are constantly exploring ways to bring string music into contemporary spaces. Our mission is to promote and popularize Western classical music in India through live concerts, educational initiatives, and collaborations with artists across genres.</p>
+
+  <h2>Our Vision</h2>
+  <p>To be a cultural beacon for Western classical music in India and inspire the next generation of musicians and music lovers.</p>
+
+  <h2>Our Ensemble</h2>
+  <p>We adapt our performances based on the occasion — performing as a soloist, duo, trio, quartet, or full ensemble. Whether it's an intimate gathering or a grand concert hall, our goal remains the same: to move hearts through music.</p>
+
+  
+  <div class="back-link">
+    <a href="index.htm">← Back to Home</a>
+  </div>
+<script>
+  function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('active');
+  }
+</script>
+</div>
+</body>
+</html>

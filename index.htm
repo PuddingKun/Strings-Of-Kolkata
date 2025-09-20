@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strings of Kolkata</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Nunito&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: #fff;
+      color: #222;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url("images/CVR.JPG") center/cover no-repeat;
+      color: white;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      letter-spacing: 2px;
+      animation: fadeInDown 1s ease-out;
+    }
+    header p {
+      font-size: 1.2em;
+      margin: 10px 0 20px;
+      animation: fadeIn 2s ease-out;
+    }
+    .btn {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+    .btn:hover {
+  background: white;
+  color: #111;
+  transform: scale(1.05);
+}
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2em;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: black;
+      margin-top: 8px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #f8f8f8;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    footer {
+      background: #111;
+      color: #eee;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: #ffffff;
+      z-index: 999;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .nav-container {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5em;
+      color: white;
+    }
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5em;
+      color: white;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      position: relative;
+    }
+    .nav-links li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -4px;
+      background-color: white;
+      transition: width 0.3s ease;
+    }
+    .nav-links li a:hover::after {
+      width: 100%;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        flex-direction: column;
+        background: rgba(0,0,0,0.8);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        display: none;
+        padding: 10px 20px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+    }
+    
+</style>
+</head>
+<body>
+        <nav class="navbar">
+                <div class="nav-container">
+                  <div class="nav-logo">Strings of Kolkata</div>
+                  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+                  <ul class="nav-links">
+                    <li><a href="index.htm">Home</a></li>
+                    <li><a href="rep.htm">Repertoire</a></li>
+                    <li><a href="per.htm">Performances</a></li>
+                    <li><a href="">Contact</a></li>
+                  </ul>
+                </div>
+              </nav>
+  <header>
+    <h1>Strings of Kolkata</h1>
+    <p>Western Classical Music Ensemble | Kolkata</p>
+    <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; margin-top: 20px;">
+  <button class="btn" onclick="document.getElementById('about').scrollIntoView()">About Us</button>
+  <button class="btn" onclick="document.getElementById('contact').scrollIntoView()">Contact</button>
+</div>
+  </header>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Strings of Kolkata is a Western classical music band dedicated to bringing the elegance and depth of string music to audiences in Kolkata and beyond. The ensemble features talented musicians performing a diverse repertoire, from Baroque to contemporary compositions. Our goal is to promote Western classical music in India through live performances, collaborations, and innovative projects.</p>
+    <p><a href="about.htm">Read more →</a></p>
+  </section>
+
+  <section id="music">
+    <h2>Our Music</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Baroque Masterpieces</h3>
+        <p>Bach, Vivaldi, Handel</p>
+      </div>
+      <div class="card">
+ 
+        <h3>Classical Elegance</h3>
+        <p>Mozart, Haydn, Beethoven</p>
+      </div>
+      <div class="card">
+
+        <h3>Romantic Expressions</h3>
+        <p>Tchaikovsky, Brahms, Dvořák</p>
+      </div>
+    </div>
+    <p style="margin-top: 20px;"><a href="rep.htm">Explore full repertoire →</a></p>
+  </section>
+
+  <section id="performances">
+    <h2>Performances</h2>
+    <div class="grid">
+      <div class="card">
+        <a href="performances.html#lacucina">
+          <img src="images/lc.jpg" alt="La Cucina Trio">
+          <h3>Trio at La Cucina</h3>
+        </a>
+      </div>
+      <div class="card">
+        <a href="performances.html#tajbengal">
+          <img src="images/CVR.jpg" alt="Taj Bengal Quartet">
+          <h3>Quartet at Taj Bengal</h3>
+        </a>
+      </div>
+      <div class="card">
+        <a href="performances.html#iccr">
+          <img src="images/hyt.jpg" alt="ICCR Quartet">
+          <h3>Performance at Hyatt Regency</h3>
+        </a>
+      </div>
+    </div>
+    <p style="margin-top: 20px;"><a href="per.htm">View all performances →</a></p>
+  </section>
+
+  <section id="ensemble">
+        <h2>Ensemble Options</h2>
+        <div class="grid">
+          <div class="card">
+            <img src="images/sc.jpg" alt="Solo Performance">
+            <h3>Solo Performance</h3>
+          </div>
+          <div class="card">
+            <img src="images/thyt.jpg" alt="Trio Performance">
+            <h3>Trio Performance</h3>
+          </div>
+          <div class="card">
+            <img src="images/flm.jpg" alt="Full Ensemble">
+            <h3>Full Ensemble</h3>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/iccr.jpg" alt="Full Ensemble">
+          <h3>Quartet</h3>
+        </div>
+      </div>
+        <p style="margin-top: 20px;">We perform as a string quartet, trio, duo, or full ensemble to adapt to events and collaborations.</p>
+      </section>
+  <footer>
+    <p>&copy; 2025 Strings of Kolkata | Designed by Shreedeep Patra</p>
+  </footer>
+<script>
+  function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('active');
+  }
+  let prevScroll = window.scrollY;
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > prevScroll && currentScroll > 80) {
+      navbar.style.top = '-80px';
+    } else {
+      navbar.style.top = '0';
+    }
+    prevScroll = currentScroll;
+  });
+</script>
+</body>
+</html>
